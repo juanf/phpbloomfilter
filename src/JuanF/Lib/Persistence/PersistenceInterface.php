@@ -1,6 +1,6 @@
 <?php
 
-namespace FanBridge\Lib\Persistence;
+namespace JuanF\Lib\Persistence;
 
 interface PersistenceInterface {
 	protected static function init($config);

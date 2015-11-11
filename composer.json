@@ -1,20 +1,20 @@
 {
-    "name": "fanbridge-lib/bloomfilter",
+    "name": "juanf/bloomfilter",
     "description": "Bloom filter implementation with redis backing",
-    "keywords": ["bloom", "filter", "database", "redis", "fanbridge"],
-    "homepage": "https://www.fanbridge.com",
+    "keywords": ["bloom", "filter", "database", "redis"],
+    "homepage": "https://github.com/juanf",
     "type": "library",
     "license": "Apache-2.0",
     "authors": [
         {
             "name": "Juan Ferrari",
-            "email": "juan@fanbridge.com",
-            "homepage": "http://www.fanbridge.com/"
+            "email": "juan.ferrarib@gmail.com",
+            "homepage": "https://github.com/juanf"
         }
     ],
     "autoload": {
         "psr-0": {
-            "FanBridge": "src/"
+            "JuanF": "src/"
         }
     }
 }
