@@ -7,7 +7,7 @@ interface PersistenceInterface
 
     private function __construct();
 
-    protected static function init($config);
+    protected static function init($config = null);
     protected function get($key);
     protected function set($key, $value);
 }
