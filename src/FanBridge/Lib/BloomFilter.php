@@ -2,12 +2,11 @@
 
 namespace FanBridge\Lib;
 
+class BloomFilter
+{
 
-class BloomFilter {
+    public function __construct()
+    {
 
-	public function __construct()
-	{
-		echo 'hola...';
-	}
-
+    }
 }
