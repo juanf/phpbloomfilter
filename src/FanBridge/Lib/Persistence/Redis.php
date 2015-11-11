@@ -7,7 +7,7 @@ class Redis extends Persistence {
 	public static function init($config)
 	{
 	
-		return new $this;
+		return new self;
 	}
 
 	public function get($key)
