@@ -18,7 +18,7 @@ class Redis extends Persistence
         if (!(self::$redisInstance instanceof Redis)) {
             self::$redisInstance = new \Redis();
             self::$redisInstance->connect(self::$host, self::$port);
-            self::$redisInstance->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_PHP);
+            self::$redisInstance->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_PHP);
 
             if (isset($config['options']) && count($config['options'])) {
                 foreach ($config['options'] as $key => $value) {
