@@ -16,7 +16,7 @@ class Redis extends Persistence
         self::$port = isset($config['port']) ? $config['port'] : self::$port;
 
         if (!(self::$redisInstance instanceof Redis)) {
-            self::$redisInstance = new Redis();
+            self::$redisInstance = new \Redis();
             self::$redisInstance->connect(self::$host, self::$port);
             self::$redisInstance->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_PHP);
 
