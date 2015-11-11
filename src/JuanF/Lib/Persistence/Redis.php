@@ -5,9 +5,9 @@ namespace JuanF\Lib\Persistence;
 class Redis extends Persistence
 {
 
-    protected $host = 'localhost';
-    protected $port = 6379;
-    private $redisInstance;
+    protected static $host = 'localhost';
+    protected static $port = 6379;
+    protected static $redisInstance;
 
     public static function init($config)
     {
