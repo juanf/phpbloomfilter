@@ -9,7 +9,7 @@ class Redis extends Persistence
     protected static $port = 6379;
     protected static $redisInstance;
 
-    public static function init($config)
+    public static function init($config = [])
     {
 
         self::$host = isset($config['host']) ? $config['host'] : self::$host;
