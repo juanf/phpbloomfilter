@@ -2,21 +2,21 @@
 
 namespace FanBridge\Lib\Persistence;
 
-class Redis extends Persistence
-{
+class Redis extends Persistence {
 
-    public static function init($config)
-    {
+	public static function init($config)
+	{
+	
+		return $this;
+	}
 
-    }
+	public function get($key)
+	{
 
-    public function get($key)
-    {
-    
-    }
+	}
 
-    public function set($key, $value)
-    {
-    
-    }
+	public function set($key, $value)
+	{
+
+	}
 }

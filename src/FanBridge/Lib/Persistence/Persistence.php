@@ -2,8 +2,5 @@
 
 namespace FanBridge\Lib\Persistence;
 
-abstract class Persistence
-{
-
-
+abstract class Persistence {
 }
