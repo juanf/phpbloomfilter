@@ -14,7 +14,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "FanBridge\\Lib": "src/"
+            "FanBridge\\Lib\\BloomFilter": "bloomfilter/src"
         }
     }
 }
