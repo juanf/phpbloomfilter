@@ -12,17 +12,17 @@ class Redis extends Persistence
     public static function init($config)
     {
 
-        $this->host = isset($config['host']) ? $config['host'] : $this->host;
-        $this->port = isset($config['port']) ? $config['port'] : $this->port;
+        self::$host = isset($config['host']) ? $config['host'] : self::$host;
+        self::$port = isset($config['port']) ? $config['port'] : self::$port;
 
-        if (!($this->redisInstance instanceof Redis)) {
-            $this->redisInstance = new Redis();
-            $this->redisInstance->connect($this->host, $this->port);
-            $this->redisInstance->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_PHP);
+        if (!(self::$redisInstance instanceof Redis)) {
+            self::$redisInstance = new Redis();
+            self::$redisInstance->connect(self::$host, self::$port);
+            self::$redisInstance->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_PHP);
 
             if (isset($config['options']) && count($config['options'])) {
                 foreach ($config['options'] as $key => $value) {
-                    $this->redisInstance->setOption($key, $value);
+                    self::$redisInstance->setOption($key, $value);
                 }
             }
         }
