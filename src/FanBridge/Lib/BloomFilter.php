@@ -5,7 +5,8 @@ namespace FanBridge\Lib;
 class BloomFilter
 {
 
-    public function __construct()
+
+    public function __construct($size, $hashCount)
     {
 
     }
