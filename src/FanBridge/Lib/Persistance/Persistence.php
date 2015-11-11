@@ -1,6 +1,6 @@
 <?php
 
-namespace FanBridge\Lib\Persistance;
+namespace FanBridge\Lib\Persistence;
 
 abstract class Persistence
 {
