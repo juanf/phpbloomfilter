@@ -30,11 +30,10 @@ class BloomFilter
     public function add($value)
     {
 
-    	for ($index = 0; $index < $this->hashCount; $index++) {
-
-    		echo $this->hash($value, $index), "\n";
+        for ($index = 0; $index < $this->hashCount; $index++) {
+            echo $this->hash($value, $index), "\n";
 //	        $this->persistence->set($this->key, $value);
-    	}
+        }
 
     }
 
