@@ -3,8 +3,6 @@
 namespace JuanF\Lib;
 
 use JuanF\Lib\Persistence\Persistence;
-use JuanF\Lib\Hash\Fnv;
-use JuanF\Lib\Hash\HashMix;
 
 class BloomFilter
 {
@@ -48,10 +46,9 @@ class BloomFilter
 
     protected function hash($algo, $value, $index = 0)
     {
-    	echo $algo, "\n";
     	$class = new \ReflectionClass('JuanF\\Lib\\Hash\\' . $algo);
     	$instance = $class->newInstance();
-    	echo "hash: ", $instance::hash($value), "\n";
+    	echo "$algo hash: ", $instance::hash($value), "\n";
 
         return crc32($value . $index) % $this->size;
     }
