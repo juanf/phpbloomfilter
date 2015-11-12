@@ -37,8 +37,7 @@ class BloomFilter
 
         	$algo = $this->hashClasses[$index % count($this->hashClasses)];
 
-        	echo $algo, "\n";
-        	echo "hash2: ", $this->hash($algo, $value, $index), "\n";
+        	$this->hash($algo, $value, $index), "\n";
 
 
 
@@ -49,8 +48,9 @@ class BloomFilter
 
     protected function hash($algo, $value, $index = 0)
     {
-
+    	echo $algo, "\n";
     	echo "hash: ", Fnv::hash($value), "\n";
+
         return crc32($value . $index) % $this->size;
     }
 }
