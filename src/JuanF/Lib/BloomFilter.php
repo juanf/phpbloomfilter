@@ -49,7 +49,7 @@ class BloomFilter
     protected function hash($algo, $value, $index = 0)
     {
     	echo $algo, "\n";
-    	$class = new \ReflectionClass($algo);
+    	$class = new \ReflectionClass('JuanF\\Lib\\Hash\\' . $algo);
     	$instance = $class->newInstance();
     	echo "hash: ", $instance::hash($value), "\n";
 
