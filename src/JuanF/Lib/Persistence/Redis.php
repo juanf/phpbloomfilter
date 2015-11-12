@@ -35,8 +35,13 @@ class Redis extends Persistence
         echo "get $key\n";
     }
 
-    public function set($key, $value)
+    public function set($key, $bit)
     {
-        echo "set $key, $value\n";
+        echo "set $key, $bit\n";
+
+        $pipe = self::$redisInstance->pipeline();
+
+        $pipe->setbit($key, $bit, 1);
+        $pipe->execute();
     }
 }

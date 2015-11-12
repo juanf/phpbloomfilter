@@ -27,10 +27,17 @@ class BloomFilter
 
     }
 
-    public function add($item)
+    public function add($value)
     {
 
-        $this->persistence->set($this->key, $item);
+        echo $this->hash($value);
+        $this->persistence->set($this->key, $value);
 
+    }
+
+    protected function hash($value)
+    {
+
+        return $value % $this->size;
     }
 }
