@@ -30,14 +30,17 @@ class BloomFilter
     public function add($value)
     {
 
-        echo $this->hash($value), "\n";
-//        $this->persistence->set($this->key, $value);
+    	for ($index = 0; $index < $this->hashCount; $index++) {
+
+    		echo $this->hash($value, $index), "\n";
+//	        $this->persistence->set($this->key, $value);
+    	}
 
     }
 
-    protected function hash($value)
+    protected function hash($value, $index = 0)
     {
 
-        return crc32($value) % $this->size;
+        return crc32($value . $index) % $this->size;
     }
 }
