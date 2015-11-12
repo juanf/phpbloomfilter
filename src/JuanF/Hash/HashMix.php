@@ -5,7 +5,7 @@ namespace JuanF\Lib\Hash;
 class HashMix extends Hash
 {
 
-    public function hash3($hash_key, $bucket = 0)
+    public static function hash3($hash_key, $bucket = 0)
     {
         $a = strlen($hash_key);
         $b = 0xff1 * (int) $bucket;

@@ -5,5 +5,5 @@ namespace JuanF\Lib\Hash;
 interface HashInterface
 {
 
-    public function hash($value);
+    static function hash($value);
 }

@@ -48,6 +48,7 @@ class BloomFilter
     protected function hash($algo, $value, $index = 0)
     {
 
+    	echo "hash: ", \JuanF\Lib\Hash\Fnv::hash($value);
         return crc32($value . $index) % $this->size;
     }
 }

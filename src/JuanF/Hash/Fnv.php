@@ -12,7 +12,7 @@ class Fnv extends Hash
      * {@inheritDoc}
      * @see \JuanF\Lib\Hash\HashInterface::hash()
      */
-    public function hash($txt)
+    public static function hash($txt)
     {
         $buf = str_split($txt);
         $hash = self::FNV_offset_basis_32;
