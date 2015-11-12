@@ -11,6 +11,7 @@ class BloomFilter
     protected $key;
     protected $size;
     protected $hashCount = 3;
+    protected $hashClasses = ['Fnv', 'HashMix'];
 
     public function __construct(Persistence $persistence)
     {
@@ -31,13 +32,20 @@ class BloomFilter
     {
 
         for ($index = 0; $index < $this->hashCount; $index++) {
-            echo $this->hash($value, $index), "\n";
+
+        	$algo = $this->hashClasses[$index % count($this->hashClasses)];
+
+        	echo $algo, "\n";
+        	echo $this->hash($algo, $value, $index), "\n";
+
+
+
 //	        $this->persistence->set($this->key, $value);
         }
 
     }
 
-    protected function hash($value, $index = 0)
+    protected function hash($algo, $value, $index = 0)
     {
 
         return crc32($value . $index) % $this->size;
