@@ -37,7 +37,7 @@ class BloomFilter
 
         	$algo = $this->hashClasses[$index % count($this->hashClasses)];
 
-        	$this->hash($algo, $value, $index), "\n";
+        	$this->hash($algo, $value, $index);
 
 
 
