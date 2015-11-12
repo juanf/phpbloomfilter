@@ -48,7 +48,8 @@ class BloomFilter
     {
     	$class = new \ReflectionClass('JuanF\\Lib\\Hash\\' . $algo);
     	$instance = $class->newInstance();
-    	echo "$algo hash: ", $instance::hash($value), "\n";
+
+    	echo "$algo hash: ", $instance::hash($value + $index), "\n";
 
         return crc32($value . $index) % $this->size;
     }
