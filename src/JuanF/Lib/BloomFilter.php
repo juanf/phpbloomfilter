@@ -38,6 +38,6 @@ class BloomFilter
     protected function hash($value)
     {
 
-        return $value % $this->size;
+        return crc32($value) % $this->size;
     }
 }
