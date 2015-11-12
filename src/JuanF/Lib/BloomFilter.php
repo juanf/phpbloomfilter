@@ -3,6 +3,8 @@
 namespace JuanF\Lib;
 
 use JuanF\Lib\Persistence\Persistence;
+use JuanF\Lib\Hash\Fnv;
+use JuanF\Lib\Hash\HashMix;
 
 class BloomFilter
 {
