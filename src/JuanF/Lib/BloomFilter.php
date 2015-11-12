@@ -49,7 +49,9 @@ class BloomFilter
     protected function hash($algo, $value, $index = 0)
     {
     	echo $algo, "\n";
-    	echo "hash: ", $algo::hash($value), "\n";
+    	$class = new \ReflectionClass($algo);
+    	$instance = $class->newInstance();
+    	echo "hash: ", $instance::hash($value), "\n";
 
         return crc32($value . $index) % $this->size;
     }
