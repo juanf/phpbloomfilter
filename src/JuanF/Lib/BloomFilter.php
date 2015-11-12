@@ -31,7 +31,7 @@ class BloomFilter
     {
 
         echo $this->hash($value);
-        $this->persistence->set($this->key, $value);
+//        $this->persistence->set($this->key, $value);
 
     }
 
