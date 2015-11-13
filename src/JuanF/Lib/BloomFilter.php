@@ -45,7 +45,7 @@ class BloomFilter
             $algo = $this->hashClasses[$index % count($this->hashClasses)];
 
             $offsets[] = $this->hash($algo, $value, $index);
-            echo $this->key, " - $value";
+            echo $this->key, " - $value\n";
         }
 
         $bits = $this->persistence->get($this->key, $offsets);
