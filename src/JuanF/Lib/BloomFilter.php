@@ -35,7 +35,7 @@ class BloomFilter
             $algo = $this->hashClasses[$index % count($this->hashClasses)];
 
             $bit = $this->hash($algo, $value, $index);
-
+assert($bit < $this->size, 'bit > size!');
             echo "bit: $bit\n";
 
 
