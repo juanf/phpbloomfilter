@@ -29,7 +29,7 @@ class Fnv extends Hash
 
     public static function hash($txt)
     {
-    	return sprintf('%u', hash('fnv1a32', $txt));
+    	return sprintf('%u', hexdec(hash('fnv1a32', $txt)));
     }
 
 }
