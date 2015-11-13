@@ -35,6 +35,7 @@ class Redis extends Persistence
         $pipe = self::$redisInstance->pipeline();
 
         foreach ($bits as $bit) {
+        	echo "get $key, $bit\n";
 	        $pipe->getBit($key, $bit);
         }
 
