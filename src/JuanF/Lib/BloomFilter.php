@@ -40,14 +40,15 @@ class BloomFilter
 
     public function has($value)
     {
-        $bits = [];
+        $offsets = [];
         for ($index = 0; $index < $this->hashCount; $index++) {
             $algo = $this->hashClasses[$index % count($this->hashClasses)];
 
-            $value = $this->hash($algo, $value, $index);
-            $bits[] = $this->persistence->get($this->key, $value);
+            $offsets[] = $this->hash($algo, $value, $index);
             echo $this->key, " - $value";
         }
+
+        $bits = $this->persistence->get($this->key, $offsets);
 
         print_r($bits);
     }
