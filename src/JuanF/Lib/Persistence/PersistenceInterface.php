@@ -4,6 +4,11 @@ namespace JuanF\Lib\Persistence;
 
 interface PersistenceInterface
 {
+
+    /**
+     * Init backend
+     * @param array $config Optional
+     */
     static function init($config = null);
 
     /**
