@@ -9,6 +9,11 @@ class Redis extends Persistence
     protected static $port = 6379;
     protected static $redisInstance;
 
+    /**
+     * Init Redis backend. Optionally pass host, port and options.
+     *
+     * @param array $config
+     */
     public static function init($config = [])
     {
 
@@ -30,22 +35,27 @@ class Redis extends Persistence
         return new self;
     }
 
+    /**
+     * {@inheritDoc}
+     * @see \JuanF\Lib\Persistence\PersistenceInterface::get()
+     */
     public function get($key, $bits)
     {
         $pipe = self::$redisInstance->pipeline();
 
         foreach ($bits as $bit) {
-        	echo "get $key, $bit\n";
-	        $pipe->getBit($key, $bit);
+            $pipe->getBit($key, $bit);
         }
 
         return $pipe->exec();
     }
 
+    /**
+     * {@inheritDoc}
+     * @see \JuanF\Lib\Persistence\PersistenceInterface::set()
+     */
     public function set($key, $bit)
     {
-        echo "set $key, $bit\n";
-
         $pipe = self::$redisInstance->pipeline();
 
         $pipe->setBit($key, $bit, 1);
