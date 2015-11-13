@@ -34,8 +34,9 @@ class BloomFilter
         for ($index = 0; $index < $this->hashCount; $index++) {
             $algo = $this->hashClasses[$index % count($this->hashClasses)];
 
-            $this->hash($algo, $value, $index);
+            $bit = $this->hash($algo, $value, $index);
 
+            echo "bit: $bit\n";
 
 
 //	        $this->persistence->set($this->key, $value);
