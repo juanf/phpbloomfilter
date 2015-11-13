@@ -4,7 +4,10 @@ namespace JuanF\Lib\Hash;
 
 class HashMix extends Hash
 {
-
+	/**
+	 * {@inheritDoc}
+	 * @see \JuanF\Lib\Hash\HashInterface::hash()
+	 */
     public static function hash($hash_key, $bucket = 0)
     {
         $a = strlen($hash_key);
