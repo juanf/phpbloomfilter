@@ -45,7 +45,6 @@ class BloomFilter
             $algo = $this->hashClasses[$index % count($this->hashClasses)];
 
             $offsets[] = $this->hash($algo, $value, $index);
-            echo $this->key, " - $value\n";
         }
 
         $bits = $this->persistence->get($this->key, $offsets);
@@ -60,8 +59,7 @@ class BloomFilter
         $class = new \ReflectionClass('JuanF\\Lib\\Hash\\' . $algo);
         $instance = $class->newInstance();
 
-//        echo "$algo hash: ", $instance::hash($value . $index), "\n";
+        return crc32($instance::hash($value . $index)) % $this->size;
 
-        return crc32($value . $index) % $this->size;
     }
 }
