@@ -34,8 +34,8 @@ class Redis extends Persistence
     {
         $pipe = self::$redisInstance->pipeline();
 
-        $pipe->getbit($key, $bit);
-        $pipe->exec();
+        $pipe->getBit($key, $bit);
+        return $pipe->exec();
     }
 
     public function set($key, $bit)
@@ -44,7 +44,7 @@ class Redis extends Persistence
 
         $pipe = self::$redisInstance->pipeline();
 
-        $pipe->setbit($key, $bit, 1);
+        $pipe->setBit($key, $bit, 1);
         return $pipe->exec();
     }
 }
