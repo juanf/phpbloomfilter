@@ -30,9 +30,12 @@ class Redis extends Persistence
         return new self;
     }
 
-    public function get($key)
+    public function get($key, $bit)
     {
-        echo "get $key\n";
+        $pipe = self::$redisInstance->pipeline();
+
+        $pipe->getbit($key, $bit, 1);
+        $pipe->exec();
     }
 
     public function set($key, $bit)

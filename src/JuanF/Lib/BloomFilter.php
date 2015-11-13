@@ -30,14 +30,25 @@ class BloomFilter
 
     public function add($value)
     {
-
         for ($index = 0; $index < $this->hashCount; $index++) {
             $algo = $this->hashClasses[$index % count($this->hashClasses)];
 
             $value = $this->hash($algo, $value, $index);
             $this->persistence->set($this->key, $value);
         }
+    }
 
+    public function has($value)
+    {
+        $bits = [];
+        for ($index = 0; $index < $this->hashCount; $index++) {
+            $algo = $this->hashClasses[$index % count($this->hashClasses)];
+    
+            $value = $this->hash($algo, $value, $index);
+            $bits[] = $this->persistence->get($this->key, $value);
+        }
+
+        print_r($bits);
     }
 
     protected function hash($algo, $value, $index = 0)
