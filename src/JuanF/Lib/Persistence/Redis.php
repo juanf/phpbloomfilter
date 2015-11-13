@@ -42,6 +42,6 @@ class Redis extends Persistence
         $pipe = self::$redisInstance->pipeline();
 
         $pipe->setbit($key, $bit, 1);
-//        $pipe->execute();
+        $pipe->exec();
     }
 }
