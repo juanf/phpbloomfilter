@@ -12,6 +12,7 @@
             "homepage": "https://github.com/juanf"
         }
     ],
+    "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
             "JuanF": "src/"
