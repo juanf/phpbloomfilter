@@ -1,6 +1,6 @@
 {
-    "name": "juanf/bloomfilter",
-    "description": "Bloom filter implementation with redis backing",
+    "name": "juanf/phpbloomfilter",
+    "description": "PHP Bloom filter implementation with redis backing",
     "keywords": ["bloom", "filter", "database", "redis"],
     "homepage": "https://github.com/juanf",
     "type": "library",
