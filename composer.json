@@ -2,7 +2,7 @@
     "name": "juanf/phpbloomfilter",
     "description": "PHP Bloom filter implementation with redis backing",
     "keywords": ["bloom", "filter", "database", "redis"],
-    "homepage": "https://github.com/juanf",
+    "homepage": "https://github.com/juanf/phpbloomfilter",
     "type": "library",
     "license": "Apache-2.0",
     "authors": [
