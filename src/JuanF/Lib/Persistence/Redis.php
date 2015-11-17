@@ -27,23 +27,27 @@ class Redis extends Persistence
     protected static $redisInstance;
 
     /**
-     * Init Redis backend. Optionally pass host, port and options.
+     * Init Redis backend. Optionally pass a Redis instance or an array
+     * with host, port and options.
      *
-     * @param array $config
+     * @param array $parmas
      */
-    public static function init($config = [])
+    public static function init($params)
     {
-
-        self::$host = isset($config['host']) ? $config['host'] : self::$host;
-        self::$port = isset($config['port']) ? $config['port'] : self::$port;
+        if ($params instanceof Redis) {
+            self::$redisInstance = $params;
+        } elseif (is_array($params)) {
+            self::$host = isset($params['host']) ? $params['host'] : self::$host;
+            self::$port = isset($params['port']) ? $params['port'] : self::$port;
+        }
 
         if (!(self::$redisInstance instanceof Redis)) {
             self::$redisInstance = new \Redis();
             self::$redisInstance->connect(self::$host, self::$port);
             self::$redisInstance->setOption(\Redis::OPT_SERIALIZER, \Redis::SERIALIZER_PHP);
 
-            if (isset($config['options']) && count($config['options'])) {
-                foreach ($config['options'] as $key => $value) {
+            if (isset($params['options']) && count($params['options'])) {
+                foreach ($params['options'] as $key => $value) {
                     self::$redisInstance->setOption($key, $value);
                 }
             }
