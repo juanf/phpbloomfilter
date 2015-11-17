@@ -34,7 +34,7 @@ class Redis extends Persistence
      */
     public static function init($params)
     {
-        if ($params instanceof Redis) {
+        if ($params instanceof \Redis) {
             self::$redisInstance = $params;
         } elseif (is_array($params)) {
             self::$host = isset($params['host']) ? $params['host'] : self::$host;
