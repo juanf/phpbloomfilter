@@ -24,9 +24,9 @@ interface PersistenceInterface
 
     /**
      * Init backend
-     * @param array $config Optional
+     * @param mixed $params Optional
      */
-    static function init($config = null);
+    static function init($params = null);
 
     /**
      * Get the given bits for the key.
