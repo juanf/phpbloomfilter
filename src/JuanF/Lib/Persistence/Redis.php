@@ -32,7 +32,7 @@ class Redis extends Persistence
      *
      * @param array $parmas
      */
-    public static function init($params)
+    public static function init($params = null)
     {
         if ($params instanceof \Redis) {
             self::$redisInstance = $params;
